@@ -1,0 +1,1 @@
+libs/global_script.bat
