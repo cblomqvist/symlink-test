@@ -14,6 +14,7 @@ exit /B %ERRORLEVEL%
 @echo === Cleaning up old stuff if any... ===
 DEL /F/Q/S libs\*.*
 rmdir /Q/S libs
+rmdir /Q/S liblink
 DEL /F/Q/S unit1\*.*
 rmdir /Q/S unit1
 DEL /F/Q/S unit2\*.*
@@ -24,6 +25,7 @@ exit /B 0
 
 :create_libs
 mkdir libs
+mklink /D liblink libs
 call :create_lib 1
 call :create_lib 2
 echo @echo script %%0 > libs\script.bat
